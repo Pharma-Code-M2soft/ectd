@@ -1,107 +1,73 @@
-import { Container } from "@/components/ui";
-import {
-  FileText,
-  PenTool,
-  Settings,
-  Users,
-  CheckCircle,
-  FolderOpen,
-  FileOutput,
-  Send,
-} from "lucide-react";
+import { Check } from "lucide-react";
 
-const steps = [
+const features = [
   {
-    icon: FileText,
-    title: "Integracao de Documentos",
-    description: "Importe estudos clinicos, dados CMC e documentacao existente",
-    step: 1,
+    name: "Integracao de Documentos",
+    description: "Importe estudos clinicos, dados CMC e documentacao existente de forma simples e rapida.",
   },
   {
-    icon: PenTool,
-    title: "Criacao de Rascunho",
-    description: "IA gera rascunhos estruturados baseados nos seus dados",
-    step: 2,
+    name: "Criacao de Rascunho",
+    description: "IA gera rascunhos estruturados baseados nos seus dados e templates pre-aprovados.",
   },
   {
-    icon: Settings,
-    title: "Refinamento de Conteudo",
-    description: "Ajuste fino com templates especificos para cada modulo",
-    step: 3,
+    name: "Refinamento de Conteudo",
+    description: "Ajuste fino com templates especificos para cada modulo do dossie eCTD.",
   },
   {
-    icon: Users,
-    title: "Revisao Colaborativa",
-    description: "Trabalho em equipe em tempo real com controle de versoes",
-    step: 4,
+    name: "Revisao Colaborativa",
+    description: "Trabalho em equipe em tempo real com controle de versoes e comentarios.",
   },
   {
-    icon: CheckCircle,
-    title: "Verificacao e Auditoria",
-    description: "Validacao automatica de conformidade e completude",
-    step: 5,
+    name: "Verificacao e Auditoria",
+    description: "Validacao automatica de conformidade, formatacao e completude.",
   },
   {
-    icon: FolderOpen,
-    title: "Gestao de Dossie",
-    description: "Organize e versione todos os documentos em um so lugar",
-    step: 6,
+    name: "Gestao de Dossie",
+    description: "Organize e versione todos os documentos em um unico lugar centralizado.",
   },
   {
-    icon: FileOutput,
-    title: "Formato eCTD",
-    description: "Exportacao automatica no padrao eCTD 4.0",
-    step: 7,
+    name: "Formato eCTD",
+    description: "Exportacao automatica no padrao eCTD 4.0 aceito pela ANVISA.",
   },
   {
-    icon: Send,
-    title: "Submissao ANVISA",
-    description: "Pronto para envio a agencia reguladora",
-    step: 8,
+    name: "Submissao ANVISA",
+    description: "Documentacao pronta para envio a agencia reguladora sem retrabalho.",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="py-16 md:py-24 bg-white">
-      <Container>
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
-            Como Funciona
-          </h2>
-          <p className="text-lg text-muted">
-            Do documento inicial a submissao final, nossa plataforma guia voce
-            em cada etapa do processo regulatorio.
-          </p>
-        </div>
-
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step) => (
-            <div
-              key={step.step}
-              className="relative bg-bg rounded-xl p-6 hover:shadow-md transition-shadow group"
-            >
-              {/* Step Number */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
-                {step.step}
+    <section id="como-funciona" className="bg-white py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+          <div className="col-span-2">
+            <h2 className="text-base/7 font-semibold text-primary">
+              Processo simplificado
+            </h2>
+            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl">
+              Como Funciona
+            </p>
+            <p className="mt-6 text-base/7 text-muted">
+              Do documento inicial a submissao final, nossa plataforma guia voce
+              em cada etapa do processo regulatorio com inteligencia artificial.
+            </p>
+          </div>
+          <dl className="col-span-3 grid grid-cols-1 gap-x-8 gap-y-10 text-base/7 text-muted sm:grid-cols-2 lg:gap-y-16">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative pl-9">
+                <dt className="font-semibold text-text">
+                  <Check
+                    aria-hidden="true"
+                    className="absolute top-1 left-0 size-5 text-primary"
+                  />
+                  {feature.name}
+                </dt>
+                <dd className="mt-2">{feature.description}</dd>
               </div>
-
-              {/* Icon */}
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <step.icon className="w-6 h-6 text-primary" />
-              </div>
-
-              {/* Content */}
-              <h3 className="font-semibold text-text mb-2">{step.title}</h3>
-              <p className="text-sm text-muted leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </dl>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

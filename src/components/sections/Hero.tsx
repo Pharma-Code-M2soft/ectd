@@ -8,23 +8,16 @@ export function Hero() {
     <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-bg">
       <Container>
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            Plataforma em desenvolvimento
-          </div>
-
           {/* Headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight mb-6">
-            Acelere suas Submissoes Regulatorias com{" "}
-            <span className="text-primary">IA</span>
+            <span className="text-secondary">97%</span> Menos Tempo na Preparacao de Documentos{" "}
+            <span className="text-primary">eCTD</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto mb-8 leading-relaxed">
-            Plataforma inteligente para preparacao e gestao de dossies eCTD.
-            Reduza o tempo de submissao para ANVISA em ate{" "}
-            <span className="font-semibold text-secondary">50%</span>.
+            Transforme semanas de trabalho manual em horas. Nossa IA automatiza a geracao,
+            validacao e formatacao de dossies para submissao a ANVISA.
           </p>
 
           {/* CTAs */}
